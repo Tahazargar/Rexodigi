@@ -3,6 +3,7 @@
 use App\Http\Controllers\Administrator\AboutController;
 use App\Http\Controllers\Administrator\HeroController;
 use App\Http\Controllers\Administrator\IntroController;
+use App\Http\Controllers\Administrator\ServiceController;
 use App\Http\Controllers\Administrator\topHeaderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/dashboard/hero', HeroController::class)->parameters(['hero' => 'id']);
     Route::resource('/dashboard/about', AboutController::class)->parameters(['about'=>'id']);
     Route::resource('/dashboard/intro', IntroController::class)->parameters(['intro' => 'id']);
+    Route::resource('/dashboard/service', ServiceController::class)->parameters(['service' => 'id']);
 });
 
 
