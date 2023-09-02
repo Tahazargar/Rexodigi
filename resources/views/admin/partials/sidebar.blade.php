@@ -26,7 +26,7 @@
         <span class="icon"><i class="fas fa-book-open"></i></span>
         مقدمه
     </a>
-    <a href="#" class="icon-a">
+    <a href="{{ route('service.index') }}" class="icon-a">
         <span class="icon"><i class="fas fa-cogs"></i></span>
         خدمات
     </a>
