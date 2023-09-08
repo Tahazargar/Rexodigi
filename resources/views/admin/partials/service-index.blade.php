@@ -8,16 +8,62 @@
                     <th scope="col">#</th>
                     <th scope="col">متن قبل از تیتر</th>
                     <th scope="col">تیتر</th>
-                    <th scope="col">متن دکمه</th>
-                    <th scope="col">لینک دکمه</th>
-                    <th scope="col">عکس</th>
-                    <th scope="col">متن جاگزین تصویر</th>
+                    <th scope="col">تیتر باکس اول</th>
+                    <th scope="col">توضیح باکس اول</th>
+                    <th scope="col">متن دکمه باکس اول</th>
+                    <th scope="col">لینک باکس اول</th>
+                    <th scope="col">تیتر باکس دوم</th>
+                    <th scope="col">توضیح باکس دوم</th>
+                    <th scope="col">متن دکمه باکس دوم</th>
+                    <th scope="col">لینک باکس دوم</th>
+                    <th scope="col">تیتر باکس سوم</th>
+                    <th scope="col">توضیح باکس سوم</th>
+                    <th scope="col">متن دکمه باکس سوم</th>
+                    <th scope="col">لینک باکس سوم</th>
+                    <th scope="col">تیتر باکس چهارم</th>
+                    <th scope="col">توضیح باکس چهارم</th>
+                    <th scope="col">متن دکمه باکس چهارم</th>
+                    <th scope="col">لینک باکس چهارم</th>
                     <th>ویرایش</th>
                     <th>حذف</th>
                 </tr>
             </thead>
             <tbody>
-
+                @foreach($service as $item)
+                    <tr>
+                        <td>{{ $item->id }}</td>
+                        <td>{{ $item->pre_tilte }}</td>
+                        <td>{{ $item->title }}</td>
+                        <td>{{ $item->box_one_title }}</td>
+                        <td>{{ $item->box_one_description }}</td>
+                        <td>{{ $item->box_one_button_text }}</td>
+                        <td>{{ $item->box_one_button_link }}</td>
+                        <td>{{ $item->box_two_title }}</td>
+                        <td>{{ $item->box_two_description }}</td>
+                        <td>{{ $item->box_two_button_text }}</td>
+                        <td>{{ $item->box_two_button_link }}</td>
+                        <td>{{ $item->box_three_title }}</td>
+                        <td>{{ $item->box_three_description }}</td>
+                        <td>{{ $item->box_three_button_text }}</td>
+                        <td>{{ $item->box_three_button_link }}</td>
+                        <td>{{ $item->box_four_title }}</td>
+                        <td>{{ $item->box_four_description }}</td>
+                        <td>{{ $item->box_four_button_text }}</td>
+                        <td>{{ $item->box_four_button_link }}</td>
+                        <td>
+                        <a href="{{ route('service.edit', ['id' => $item->id]) }}" class="text-success text-decoration-none">ویرایش</a>
+                    </td>
+                    <td>
+                        <a class="text-decoration-none text-danger" href="#" onclick="destroyIt(event, {{$item->id}})">
+                            حذف
+                            <form action="{{ route('service.destroy', ['id' => $item->id]) }}" method="POST" id="delete-item-{{$item->id}}">
+                                @csrf
+                                @method('delete')
+                            </form>
+                        </a>
+                    </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
 

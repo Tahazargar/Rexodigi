@@ -85,7 +85,7 @@
 
 <div class="form-group my-3">
     {!! Form::label('box_two_button_link', 'لینک دکمه باکس دوم') !!}
-    {!! Form::text('box_one_button_link', null, ['placeholder' => 'لینک دکمه باکس دوم را وارد کنید']) !!}
+    {!! Form::text('box_two_button_link', null, ['placeholder' => 'لینک دکمه باکس دوم را وارد کنید']) !!}
     @error('box_two_button_link')
     <p class="text-danger my-2">{{$message}}</p>
     @enderror
