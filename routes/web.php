@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Administrator\AboutController;
+use App\Http\Controllers\administrator\CounterController;
 use App\Http\Controllers\Administrator\HeroController;
 use App\Http\Controllers\Administrator\IntroController;
 use App\Http\Controllers\Administrator\ServiceController;
@@ -41,6 +42,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/dashboard/about', AboutController::class)->parameters(['about'=>'id']);
     Route::resource('/dashboard/intro', IntroController::class)->parameters(['intro' => 'id']);
     Route::resource('/dashboard/service', ServiceController::class)->parameters(['service' => 'id']);
+    Route::resource('/dashboard/counter', CounterController::class)->parameters(['counter' => 'id']);
 });
 
 

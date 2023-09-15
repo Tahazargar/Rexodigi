@@ -4,5 +4,5 @@
     @include('admin.partials.sidebar')
     @include('admin.partials.header')
     @include('admin.partials.information')
-    @include('admin.partials.service-edit')
+    @include('admin.partials.counter-edit')
 @endsection('content')

@@ -8,8 +8,8 @@
               <img src="{{ asset('front/images/engineer.png') }}" class="w-100" alt="">
             </div>
             <div class="counter-text">
-              <span class="counter text-primary fs-1 fw-bold">3000</span>
-              <div class="counter-text-name fs-6 text-white">پروژه های تکمیل شده</div>
+              <span class="counter text-primary fs-1 fw-bold">{{ $counter->number_one }}</span>
+              <div class="counter-text-name fs-6 text-white">{{ $counter->text_one }}</div>
             </div>
           </div>
         </div>
@@ -19,8 +19,8 @@
               <img src="{{ asset('front/images/engineer.png') }}" class="w-100" alt="">
             </div>
             <div class="counter-text">
-              <span class="counter text-primary fs-1 fw-bold">4000</span>
-              <div class="counter-text-name fs-6 text-white">مشتریان خوشحال</div>
+              <span class="counter text-primary fs-1 fw-bold">{{ $counter->number_two }}</span>
+              <div class="counter-text-name fs-6 text-white">{{ $counter->text_two }}</div>
             </div>
           </div>
         </div>
@@ -30,8 +30,8 @@
               <img src="{{ asset('front/images/engineer.png') }}" class="w-100" alt="">
             </div>
             <div class="counter-text">
-              <span class="counter text-primary fs-1 fw-bold">2000</span>
-              <div class="counter-text-name fs-6 text-white">پروژه های جاری</div>
+              <span class="counter text-primary fs-1 fw-bold">{{ $counter->number_three }}</span>
+              <div class="counter-text-name fs-6 text-white">{{ $counter->text_three }}</div>
             </div>
           </div>
         </div>
@@ -41,8 +41,8 @@
               <img src="{{ asset('front/images/engineer.png') }}" class="w-100" alt="">
             </div>
             <div class="counter-text">
-              <span class="counter text-primary fs-1 fw-bold">14000</span>
-              <div class="counter-text-name fs-6 text-white">مهندسین و کارمندان</div>
+              <span class="counter text-primary fs-1 fw-bold">{{ $counter->number_four }}</span>
+              <div class="counter-text-name fs-6 text-white">{{ $counter->text_four }}</div>
             </div>
           </div>
         </div>

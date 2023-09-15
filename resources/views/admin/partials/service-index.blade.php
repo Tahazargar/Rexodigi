@@ -32,7 +32,7 @@
                 @foreach($service as $item)
                     <tr>
                         <td>{{ $item->id }}</td>
-                        <td>{{ $item->pre_tilte }}</td>
+                        <td>{{ $item->pre_title }}</td>
                         <td>{{ $item->title }}</td>
                         <td>{{ $item->box_one_title }}</td>
                         <td>{{ $item->box_one_description }}</td>

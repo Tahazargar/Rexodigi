@@ -34,7 +34,7 @@
 
 
             <div class="logo">
-                <a href="">Taha Zargar</a>
+                <a href="https://tahazargar.ir">Taha Zargar</a>
             </div>
         </div>
     </nav>

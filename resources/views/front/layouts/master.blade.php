@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="{{ asset('front/css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('front/css/responsive.css') }}">
   <link rel="stylesheet" href="{{ asset('front/css/fontawesome.css') }}">
-  <title>شرکت ساختمانی تاپ لرن</title>
+  <title>طاها زرگر</title>
 </head>
 <body>
 

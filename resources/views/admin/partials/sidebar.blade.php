@@ -54,6 +54,10 @@
         <span class="icon"><i class="fas fa-users"></i></span>
         کاربران
     </a>
+    <a href="{{ route('counter.index') }}" class="icon-a">
+        <span class="icon"><i class="fas fa-counter"></i></span>
+        بخش شمارنده
+    </a>
     @endif
     @if(auth()->user()->role === 'admin' || auth()->user()->role === 'author')
     <a href="#" class="icon-a">

@@ -78,7 +78,8 @@ class ServiceController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $service = Service::findOrFail($id);
+        return view('admin.service.edit', compact('service'));
     }
 
     /**
@@ -86,7 +87,41 @@ class ServiceController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $service = Service::findOrFail($id);
+        $file = $request->file('image');
+        $image = "";
+
+        if(!empty($file))
+        {
+            if(file_exists('back/images/service/' . $service->image))
+            {
+                unlink('back/images/service/' . $service->image);
+            }
+
+            $image = time() . '.' . $file->getClientOriginalExtension();
+            $file->move('back/images/service', $image);
+        }
+        else
+        {
+            $image = $service->image;
+        }
+
+        $service->update([
+            'image' => $image,
+            'pre_title' => $request->pre_title,
+            'title' => $request->title,
+            'box_one_title' => $request->box_one_title,
+            'box_one_description' => $request->box_one_description,
+            'box_one_button_text' => $request->box_one_button_text,
+            'box_one_button_link' => $request->box_one_button_link,
+            'box_two_title' => $request->box_two_title,
+            'box_two_description' => $request->box_two_description,
+            'box_two_button_text' => $request->box_two_button_text,
+            'box_two_button_link' => $request->box_two_button_link,
+        ]);
+
+        $request->session()->flash('update');
+        return redirect()->route('service.index');
     }
 
     /**
@@ -94,6 +129,14 @@ class ServiceController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $service = Service::findOrFail($id);
+        $file = $service->image;
+        if(file_exists($file))
+        {
+            unlink('back/images/service/' . $file);
+        }
+
+        $service->destroy($id);
+        return redirect()->route('service.index');
     }
 }
