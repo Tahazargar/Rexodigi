@@ -30,7 +30,7 @@
         <span class="icon"><i class="fas fa-cogs"></i></span>
         خدمات
     </a>
-    <a href="#" class="icon-a">
+    <a href="{{ route('team.index') }}" class="icon-a">
         <span class="icon"><i class="fas fa-user-friends"></i></span>
         تیم
     </a>

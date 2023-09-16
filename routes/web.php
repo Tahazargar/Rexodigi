@@ -5,6 +5,7 @@ use App\Http\Controllers\administrator\CounterController;
 use App\Http\Controllers\Administrator\HeroController;
 use App\Http\Controllers\Administrator\IntroController;
 use App\Http\Controllers\Administrator\ServiceController;
+use App\Http\Controllers\Administrator\teamController;
 use App\Http\Controllers\Administrator\topHeaderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +24,7 @@ use App\Http\Controllers\Front\HomeController;
 */
 
 Route::view('/', 'front.index')
--> name('home');
+->name('home');
 
 Route::get('/', [HomeController::class, 'index']);
 
@@ -43,6 +44,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/dashboard/intro', IntroController::class)->parameters(['intro' => 'id']);
     Route::resource('/dashboard/service', ServiceController::class)->parameters(['service' => 'id']);
     Route::resource('/dashboard/counter', CounterController::class)->parameters(['counter' => 'id']);
+    Route::resource('/dashboard/team', teamController::class)->parameters(['team' => 'id']);
 });
 
 
