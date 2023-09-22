@@ -1,7 +1,7 @@
 <div class="main-content">
     <div class="main-content-item">
        <h2>تنظیمات بخش تیم ما</h2>
-        {!! Form::open(['team' => 'team.store', 'method' => 'post', 'files' => true]) !!}
+        {!! Form::open(['route' => 'team.store', 'method' => 'post', 'files' => true]) !!}
 
 <div class="form-group my-3">
     {!! Form::label('pre_title', 'متن قبل از توضیحات') !!}
