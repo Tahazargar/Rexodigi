@@ -1,32 +1,32 @@
 <div class="main-content">
     <div class="main-content-item">
-        <h2 class="text-orange">تنظیمات بخش Intro</h2>
+        <h2 class="text-orange">تنظیمات بخش مقدمه</h2>
 
         <table class="table top-header-table">
             <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">متن قبل از تیتر</th>
-                    <th scope="col">تیتر</th>
-                    <th scope="col">متن دکمه</th>
-                    <th scope="col">لینک دکمه</th>
-                    <th scope="col">عکس</th>
-                    <th scope="col">متن جاگزین تصویر</th>
-                    <th>ویرایش</th>
-                    <th>حذف</th>
-                </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">عکس</th>
+                <th scope="col">متن قبل از تیتر</th>
+                <th scope="col">تیتر</th>
+                <th scope="col">متن دکمه</th>
+                <th scope="col">لینک دکمه</th>
+                <th scope="col">متن جاگزین تصویر</th>
+                <th>ویرایش</th>
+                <th>حذف</th>
+            </tr>
             </thead>
             <tbody>
-                @foreach($intro as $item)
-                    <tr>
-                        <td>{{ $item->id }}</td>
-                        <td><img src="{{ asset('back/images/intro/' . $item->image)}}" width="50px"></td>
-                        <td>{{ $item->pre_title }}</td>
-                        <td>{{ $item->title }}</td>
-                        <td>{{ $item->button_text }}</td>
-                        <td>{{ $item->button_link }}</td>
-                        <td>{{ $item->alt }}</td>
-                        <td>
+            @foreach($intro as $item)
+                <tr>
+                    <td>{{ $item->id }}</td>
+                    <td><img src="{{ asset('back/images/intro/' . $item->image)}}" width="50px"></td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->pre_title, 20) }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->title, 20) }}</td>
+                    <td>{{ $item->button_text }}</td>
+                    <td>{{ $item->button_link }}</td>
+                    <td>{{ $item->alt }}</td>
+                    <td>
                         <a href="{{ route('intro.edit', ['id' => $item->id]) }}" class="text-success text-decoration-none">ویرایش</a>
                     </td>
                     <td>
@@ -38,8 +38,8 @@
                             </form>
                         </a>
                     </td>
-                    </tr>
-                @endforeach
+                </tr>
+            @endforeach
             </tbody>
         </table>
 

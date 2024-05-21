@@ -21,9 +21,9 @@
                     <th scope="row">{{$item->id}}</th>
                     <td>{{$item->email}}</td>
                     <td>{{$item->phone}}</td>
-                    <td>{{$item->instagram}}</td>
-                    <td>{{$item->facebook}}</td>
-                    <td>{{$item->twitter}}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->instagram, 40) }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->facebook, 40) }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->twitter, 40) }}</td>
                     <td><a href="{{route('topHeader.edit', $item->id)}}" class="text-decoration-none text-success">ویرایش</a></td>
                     <td>
                         <a href="" class="text-danger text-decoration-none" onclick="destroyIt(event, {{ $item->id }})">حذف</a>

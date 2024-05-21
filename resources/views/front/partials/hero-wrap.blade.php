@@ -1,4 +1,4 @@
-<section class="hero-wrap" style="background-image: url({{ asset('/back/images/hero/' . $hero->image) }});">
+<section class="hero-wrap" style="background-image: url({{ asset('back/images/hero/' . $hero->image) }});">
     <div class="overlay"></div>
     <div class="container-lg">
       <div class="row min-vh-100 align-items-center justify-content-center text-center">

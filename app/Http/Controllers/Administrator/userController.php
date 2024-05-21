@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Administrator;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 
 class userController extends Controller
@@ -23,7 +24,7 @@ class userController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.users.create');
     }
 
     /**
@@ -31,7 +32,19 @@ class userController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $password = $request->input('password');
+        $hashedPassword = Hash::make($password);
+
+        User::create([
+            'name' => $request->name,
+            'role' => $request->role,
+            'email' => $request->email,
+            'mobile' => $request->mobile,
+            'password' => $hashedPassword,
+        ]);
+
+        $request->session()->flash('create');
+        return redirect()->route('users.index');
     }
 
     /**

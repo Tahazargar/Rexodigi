@@ -11,6 +11,8 @@
                     <th scope="col">توضیحات</th>
                     <th scope="col">تماس با ما</th>
                     <th scope="col">سوالات متداول</th>
+                    <th scope="col">ویرایش</th>
+                    <th scope="col">حذف</th>
                 </tr>
             </thead>
 
@@ -20,7 +22,7 @@
                     <td>{{$item->id}}</td>
                     <td><img width="50" src="{{asset('back/images/hero/' . $item->image)}}"></td>
                     <td>{{$item->foundation}}</td>
-                    <td>{{$item->description}}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->description, 40) }}</td>
                     <td>{{$item->contact}}</td>
                     <td>{{$item->faq}}</td>
                     <td><a class="text-decoration-none text-success" href="{{route('hero.edit', ['id'=>$item->id])}}">ویرایش</a></td>

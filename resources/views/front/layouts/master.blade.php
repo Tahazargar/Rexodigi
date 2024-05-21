@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="{{ asset('front/css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('front/css/responsive.css') }}">
   <link rel="stylesheet" href="{{ asset('front/css/fontawesome.css') }}">
-  <title>طاها زرگر</title>
+  @yield('page_title')
 </head>
 <body>
 
@@ -21,12 +21,14 @@
   <script src="{{ asset('front/js/counterup.js') }}"></script>
   <script src="{{ asset('front/js/waypoints.js') }}"></script>
   <script src="{{ asset('front/js/main.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
   <script>
     $('.counter').counterUp({
       delay: 10,
       time: 3000
     });
   </script>
-</body>
 
+@yield('js')
+</body>
 </html>

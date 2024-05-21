@@ -11,30 +11,18 @@
                 <div class="close-menu">
                     <i class="fas fa-times"></i>
                 </div>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">خانه</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">درباره ما</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">خدمات</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">پروژه ها</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">بلاگ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">تماس با ما</a>
-                </li>
-
+                @php $counter = 0 @endphp
+                @foreach($header as $item)
+                    <li class="nav-item">
+                        <a class="nav-link @if($counter == 0) echo active @endif }}" href="{{ Request::root() . '/' . $item->link }}">{{ $item->title }}</a>
+                    </li>
+                    @php $counter++ @endphp
+                @endforeach
             </ul>
 
 
             <div class="logo">
-                <a href="#">Taha Zargar</a>
+                <a href="#">Rexodigi</a>
             </div>
         </div>
     </nav>

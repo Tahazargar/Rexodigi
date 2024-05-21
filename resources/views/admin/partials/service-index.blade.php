@@ -1,6 +1,6 @@
 <div class="main-content">
     <div class="main-content-item">
-        <h2 class="text-orange">تنظیمات بخش Service</h2>
+        <h2 class="text-orange">تنظیمات بخش خدمات</h2>
 
         <table class="table top-header-table">
             <thead>
@@ -20,10 +20,6 @@
                     <th scope="col">توضیح باکس سوم</th>
                     <th scope="col">متن دکمه باکس سوم</th>
                     <th scope="col">لینک باکس سوم</th>
-                    <th scope="col">تیتر باکس چهارم</th>
-                    <th scope="col">توضیح باکس چهارم</th>
-                    <th scope="col">متن دکمه باکس چهارم</th>
-                    <th scope="col">لینک باکس چهارم</th>
                     <th>ویرایش</th>
                     <th>حذف</th>
                 </tr>
@@ -32,24 +28,20 @@
                 @foreach($service as $item)
                     <tr>
                         <td>{{ $item->id }}</td>
-                        <td>{{ $item->pre_title }}</td>
-                        <td>{{ $item->title }}</td>
-                        <td>{{ $item->box_one_title }}</td>
-                        <td>{{ $item->box_one_description }}</td>
-                        <td>{{ $item->box_one_button_text }}</td>
-                        <td>{{ $item->box_one_button_link }}</td>
-                        <td>{{ $item->box_two_title }}</td>
-                        <td>{{ $item->box_two_description }}</td>
-                        <td>{{ $item->box_two_button_text }}</td>
-                        <td>{{ $item->box_two_button_link }}</td>
-                        <td>{{ $item->box_three_title }}</td>
-                        <td>{{ $item->box_three_description }}</td>
-                        <td>{{ $item->box_three_button_text }}</td>
-                        <td>{{ $item->box_three_button_link }}</td>
-                        <td>{{ $item->box_four_title }}</td>
-                        <td>{{ $item->box_four_description }}</td>
-                        <td>{{ $item->box_four_button_text }}</td>
-                        <td>{{ $item->box_four_button_link }}</td>
+                        <td>{{ \Illuminate\Support\Str::limit($item->pre_title, 20) }}</td>
+                        <td>{{ \Illuminate\Support\Str::limit($item->title, 20) }}</td>
+                        <td>{{ \Illuminate\Support\Str::limit($item->box_one_title, 20) }}</td>
+                        <td>{{ \Illuminate\Support\Str::limit($item->box_one_description, 20) }}</td>
+                        <td>{{ \Illuminate\Support\Str::limit($item->box_one_button_text, 20) }}</td>
+                        <td>{{ \Illuminate\Support\Str::limit($item->box_one_button_link, 20) }}</td>
+                        <td>{{ \Illuminate\Support\Str::limit($item->box_two_title, 20) }}</td>
+                        <td>{{ \Illuminate\Support\Str::limit($item->box_two_description, 20) }}</td>
+                        <td>{{ \Illuminate\Support\Str::limit($item->box_two_button_text, 20) }}</td>
+                        <td>{{ \Illuminate\Support\Str::limit($item->box_two_button_link, 20) }}</td>
+                        <td>{{ \Illuminate\Support\Str::limit($item->box_three_title, 20) }}</td>
+                        <td>{{ \Illuminate\Support\Str::limit($item->box_three_description, 20) }}</td>
+                        <td>{{ \Illuminate\Support\Str::limit($item->box_three_button_text,20) }}</td>
+                        <td>{{ \Illuminate\Support\Str::limit($item->box_three_button_link, 20) }}</td>
                         <td>
                         <a href="{{ route('service.edit', ['id' => $item->id]) }}" class="text-success text-decoration-none">ویرایش</a>
                     </td>

@@ -17,3 +17,17 @@ nav.addEventListener("click", function(){
         item.classList.toggle('active')
     })
 })
+
+function logoutUser(){
+    document.querySelector('#logoutForm').submit();
+}
+
+// Dropdown toggle
+
+$(document).ready(function (){
+    $('.sidebar-group-link').click(function (){
+        $('.sidebar-group-link').addClass('sidebar-group-link-active');
+        $('.sidebar-group-link').children('.sidebar-dropdown-toggle').children('.angle').toggleClass('fa-angle-down fa-angle-left');
+        $('.sidebar-dropdown').slideToggle();
+    });
+});

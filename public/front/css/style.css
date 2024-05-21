@@ -550,7 +550,7 @@ header{
     position: absolute;
     bottom: 0;
     background: #3d424a;
-    width: 60px;
+    width: 105px;
     right: 20px;
     color: #fff;
     padding: 10px 0;
@@ -569,6 +569,10 @@ header{
 }
 .blogs .blog-item .blog-text-title h2{
     line-height: 40px;
+}
+
+.blog-archive-item-image{
+    height: 250px !important;
 }
 
 /* contact */
@@ -861,4 +865,51 @@ header{
 
 .caption{
     white-space: nowrap;
+}
+
+#comment-form .active{
+    background-color: #bcce1b;
+    transition: all .3s ease-in-out;
+    color: #fff;
+}
+
+#comment-form .active::placeholder{
+    color: #fff;
+}
+
+.comment-item{
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, .09);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+
+.comment-replay{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.img-detail{
+    border-radius: 5px;
+}
+
+.hero-wrap{
+    background-position: center;
+}
+
+.about-img .counter-wrap{
+    border-radius: 9999px;
+}
+
+.about-content .services{
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.tz-custom-color{
+    background-color: #2894ff;
+    color: #fff;
 }

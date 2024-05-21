@@ -3,54 +3,31 @@
       <div class="row">
         <div class="col-lg-4 col-md-6 mt-5 mt-lg-0">
           <div class="footer-about">
-            <h5 class="fw-bold text-white">شرکت ساختمانی تاپ لرن</h5>
-            <p class="mt-5 text-white">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک استلورم ایپسوم متن ساختگی با تولید</p>
-            <ul class="d-flex">
-              <li><a href=""><i class="fab fa-instagram"></i></a></li>
-              <li><a href=""><i class="fab fa-facebook"></i></a></li>
-              <li><a href=""><i class="fab fa-twitter"></i></a></li>
+            <h5 class="fw-bold text-white">{{ $footer->title }}</h5>
+            <p class="mt-5 text-white">{{ $footer->description }}</p>
+            <ul class="d-flex mt-4">
+              <li><a href="{{ $footer->instagram_link }}"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="{{ $footer->facebook_link }}"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="{{ $footer->twitter_link }}"><i class="fab fa-twitter"></i></a></li>
             </ul>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 mt-5 mt-lg-0">
           <div class="footer-service">
             <h5 class="fs-5 text-white mb-5">خدمات</h5>
-            <div class="footer-service-item d-flex mt-3">
-              <div class="footer-service-img">
-                <img src="{{ asset('front/images/service/service-item/1.webp') }}"  alt="">
-              </div>
-              <div class="footer-service-text pe-3">
-                <h5><a href="" class="text-white fs-6">این خیلی فوق العاده است و زیباست</a></h5>
-                <div class="footer-service-author text-primary mt-4">
-                  <span><i class="fas fa-user"></i>مدیر</span>
-                  <span><i class="fas fa-comment"></i>5 نظر</span>
-                </div>
-              </div>
-            </div>
-            <div class="footer-service-item d-flex mt-3">
-              <div class="footer-service-img">
-                <img src="{{ asset('front/images/service/service-item/2.webp') }}"  alt="">
-              </div>
-              <div class="footer-service-text pe-3">
-                <h5><a href="" class="text-white fs-6">این خیلی فوق العاده است و زیباست</a></h5>
-                <div class="footer-service-author text-primary mt-4">
-                  <span><i class="fas fa-user"></i>مدیر</span>
-                  <span><i class="fas fa-comment"></i>5 نظر</span>
-                </div>
-              </div>
-            </div>
-            <div class="footer-service-item d-flex mt-3">
-              <div class="footer-service-img">
-                <img src="{{ asset('front/images/service/service-item/3.webp') }}"  alt="">
-              </div>
-              <div class="footer-service-text pe-3">
-                <h5><a href="" class="text-white fs-6">این خیلی فوق العاده است و زیباست</a></h5>
-                <div class="footer-service-author text-primary mt-4">
-                  <span><i class="fas fa-user"></i>مدیر</span>
-                  <span><i class="fas fa-comment"></i>5 نظر</span>
-                </div>
-              </div>
-            </div>
+            @foreach($footerServices as $footerservice)
+                  <div class="footer-service-item d-flex mt-3">
+                      <div class="footer-service-img">
+                          <img src="{{ asset('back/images/footer-service/' . $footerservice->image) }}"  alt="{{ $footerservice->alt }}">
+                      </div>
+                      <div class="footer-service-text pe-3">
+                          <h5><a href="{{ $footerservice->link }}" class="text-white fs-6">{{ $footerservice->title }}</a></h5>
+                          <div class="footer-service-author text-primary mt-4">
+                              <span><i class="fas fa-user"></i>{{ $footerservice->author }}</span>
+                          </div>
+                      </div>
+                  </div>
+              @endforeach
           </div>
 
         </div>
@@ -58,11 +35,10 @@
           <div class="footer-quick-link">
             <h5 class="fs-5 text-white mb-5">دسترسی سریع</h5>
             <ul>
-              <li><a href=""><i class="fas fa-chevron-left"></i>صفحه نخست </a></li>
-              <li><a href=""> <i class="fas fa-chevron-left"></i>درباره ما</a></li>
-              <li><a href=""> <i class="fas fa-chevron-left"></i>تماس با ما</a></li>
-              <li><a href=""> <i class="fas fa-chevron-left"></i>خدمات</a></li>
-              <li><a href=""> <i class="fas fa-chevron-left"></i>پروژه ها</a></li>
+              <li><a href="{{ $footerQuick->first_link }}"><i class="fas fa-chevron-left"></i>{{ $footerQuick->first_text }}</a></li>
+              <li><a href="{{ $footerQuick->second_link }}"> <i class="fas fa-chevron-left"></i>{{ $footerQuick->second_text }}</a></li>
+              <li><a href="{{ $footerQuick->third_link }}"> <i class="fas fa-chevron-left"></i>{{ $footerQuick->third_text }}</a></li>
+              <li><a href="{{ $footerQuick->forth_link }}"> <i class="fas fa-chevron-left"></i>{{ $footerQuick->forth_text }}</a></li>
             </ul>
           </div>
         </div>
@@ -70,9 +46,9 @@
           <div class="footer-question">
             <h5 class="fs-5 text-white mb-5">سوالی دارید؟</h5>
             <ul>
-              <li class="d-flex mt-3"><i class="fas fa-map text-primary"></i> <h5 class="text-white fs-6 pe-2">واشنگتن سمت راست طبقه چهارم</h5></li>
-              <li class="d-flex mt-3"><i class="fas fa-phone text-primary"></i><h5 class="text-white fs-6 pe-2">09900065001</h5></li>
-              <li class="d-flex mt-3"><i class="fas fa-envelope text-primary"></i><h5 class="text-white fs-6 pe-2">Mr.tahazargar@gmail.com</h5></li>
+              <li class="d-flex mt-3"><i class="fas fa-map text-primary"></i> <h5 class="text-white fs-6 pe-2">{{ $footerAnyQuestion->address }}</h5></li>
+              <li class="d-flex mt-3"><i class="fas fa-phone text-primary"></i><h5 class="text-white fs-6 pe-2">{{ $footerAnyQuestion->phone }}</h5></li>
+              <li class="d-flex mt-3"><i class="fas fa-envelope text-primary"></i><h5 class="text-white fs-6 pe-2">{{ $footerAnyQuestion->email }}</h5></li>
             </ul>
           </div>
         </div>
@@ -80,6 +56,6 @@
     </div>
 
     <div class="copy-right">
-      <p>&copy; تمامی حقوق مادی و معنوی این وب سایت متعلق به طاها زرگر میباشد.</p>
+      <p>&copy; تمامی حقوق مادی و معنوی این وب سایت متعلق به رکسودیجی میباشد.</p>
     </div>
   </footer>

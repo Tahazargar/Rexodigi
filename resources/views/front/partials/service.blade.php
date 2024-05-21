@@ -26,14 +26,14 @@
               <a href="{{ $service->box_two_button_link }}" class="btn btn-light text-primary fs-6 fw-bold">{{ $service->box_two_button_text }}</a>
             </div>
           </div>
-          <div class="service-item bg-light d-flex px-4 py-5 shadow-sm mt-4">
+          <div class="service-item tz-custom-color d-flex px-4 py-5 shadow-sm mt-4">
             <div class="service-item-img">
-              <img src="{{ asset('front/images/service/engineer.png') }}" height="80" width="80" alt="">
+              <img src="{{ asset('front/images/service/reverse-engineering.png') }}" height="80" width="80" alt="">
             </div>
             <div class="service-item-text pe-4">
-              <h2 class="text-dark fs-3 mb-3">{{ $service->box_three_title }}</h2>
-              <p class="text-dark fs-6 mb-3">{{ $service->box_three_description }}</p>
-              <a href="{{ $service->box_three_button_link }}" class="btn btn-light text-primary fs-6 fw-bold">{{ $service->box_three_button_text }}</a>
+              <h2 class="text-white fs-3 mb-3">{{ $service->box_three_title }}</h2>
+              <p class="text-white fs-6 mb-3">{{ $service->box_three_description }}</p>
+              <a href="{{ $service->box_three_button_link }}" class="btn bg-light text-primary fs-6 fw-bold">{{ $service->box_three_button_text }}</a>
             </div>
           </div>
         </div>

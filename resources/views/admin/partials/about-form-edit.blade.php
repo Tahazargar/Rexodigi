@@ -6,7 +6,7 @@
         <div class="form-group my-3">
             {!! Form::label('image', 'عکس بخش درباره ما را وارد کنید') !!}
             {!! Form::file('image', null, ['placeholder' => 'عکس بخش درباره ما را وارد کنید']) !!}
-            <p><img src="{{ asset('back/images/about/' . $about->image) }}" width="80"></p>
+            <p><img src="{{ asset('public/back/images/about/' . $about->image) }}" width="80"></p>
             @error('image')
             <p class="text-danger my-2">{{$message}}</p>
             @enderror

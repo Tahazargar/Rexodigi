@@ -124,38 +124,6 @@
 </div>
 
 
-<div class="form-group my-3">
-    {!! Form::label('box_four_title', 'تیتر باکس چهارم') !!}
-    {!! Form::text('box_four_title', null, ['placeholder' => 'متن تیتر باکس چهارم را وارد کنید']) !!}
-    @error('box_four_title')
-    <p class="text-danger my-2">{{$message}}</p>
-    @enderror
-</div>
-
-<div class="form-group my-3">
-    {!! Form::label('box_four_description', 'متن باکس چهارم') !!}
-    {!! Form::text('box_four_description', null, ['placeholder' => 'متن باکس چهارم را وارد کنید']) !!}
-    @error('box_four_description')
-    <p class="text-danger my-2">{{$message}}</p>
-    @enderror
-</div>
-
-<div class="form-group my-3">
-    {!! Form::label('box_four_button_text', 'متن دکمه باکس چهارم') !!}
-    {!! Form::text('box_four_button_text', null, ['placeholder' => 'متن دکمه باکس چهارم را وارد کنید']) !!}
-    @error('box_four_button_text')
-    <p class="text-danger my-2">{{$message}}</p>
-    @enderror
-</div>
-
-<div class="form-group my-3">
-    {!! Form::label('box_four_button_link', 'لینک دکمه باکس چهارم') !!}
-    {!! Form::text('box_four_button_link', null, ['placeholder' => 'لینک دکمه باکس چهارم را وارد کنید']) !!}
-    @error('box_four_button_link')
-    <p class="text-danger my-2">{{$message}}</p>
-    @enderror
-</div>
-
 <div class="form-group">
     {!! Form::submit('ثبت اطلاعات', ['class' => 'btn btn-primary mt-3 w-25']) !!}
 </div>

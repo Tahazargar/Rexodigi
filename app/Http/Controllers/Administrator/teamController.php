@@ -13,7 +13,8 @@ class teamController extends Controller
      */
     public function index()
     {
-        return view('admin.team.index');
+        $team = Team::paginate(4);
+        return view('admin.team.index', compact('team'));
     }
 
     /**
@@ -41,25 +42,25 @@ class teamController extends Controller
 
         if(!empty($file_one))
         {
-            $image_one = time() . '.' . $file_one->getClientOriginalExtension();
+            $image_one = time() . '1' . '.' . $file_one->getClientOriginalExtension();
             $file_one->move("back/images/team/", $image_one);
         }
 
         if(!empty($file_two))
         {
-            $image_two = time() . '.' . $file_two->getClientOriginalExtension();
+            $image_two = time() . '2' . '.' . $file_two->getClientOriginalExtension();
             $file_two->move("back/images/team/", $image_two);
         }
 
         if(!empty($file_three))
         {
-            $image_three = time() . '.' . $file_three->getClientOriginalExtension();
+            $image_three = time() . '3' . '.' . $file_three->getClientOriginalExtension();
             $file_three->move("back/images/team/", $image_three);
         }
 
         if(!empty($file_four))
         {
-            $image_four = time() . '.' . $file_four->getClientOriginalExtension();
+            $image_four = time() . '4' . '.' . $file_four->getClientOriginalExtension();
             $file_four->move("back/images/team/", $image_four);
         }
 
@@ -113,7 +114,8 @@ class teamController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $team = Team::findOrFail($id);
+        return view('admin.team.edit', compact('team'));
     }
 
     /**
@@ -129,6 +131,33 @@ class teamController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $team = Team::findOrFail($id);
+        $image_one = $team->image_one;
+        $image_two = $team->image_two;
+        $image_three = $team->image_three;
+        $image_four = $team->image_four;
+
+        if(file_exists($image_one))
+        {
+            unlink('back/images/team/' . $image_one);
+        }
+
+        if(file_exists($image_two))
+        {
+            unlink('back/images/team/' . $image_two);
+        }
+
+        if(file_exists($image_three))
+        {
+            unlink('back/images/team/' . $image_three);
+        }
+
+        if(file_exists($image_four))
+        {
+            unlink('back/images/team/' . $image_four);
+        }
+
+        $team->destroy($id);
+        return redirect()->route('team.index');
     }
 }

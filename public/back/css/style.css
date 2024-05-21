@@ -147,7 +147,7 @@
     justify-content: space-between;
     align-items: center;
     background: #00000026;
-    padding: 10px 50px;
+    padding: 20px 50px;
 }
 
 #main .information .col-div-3 .box .box-icon svg{
@@ -271,4 +271,17 @@
 
 .about-us-table thead tr th{
     white-space: nowrap;
+}
+
+.sidebar-dropdown{
+    display: none;
+}
+
+.table tr th,
+.table thead td{
+    text-wrap: nowrap;
+}
+
+.ck-editor{
+    width: 50% !important;
 }

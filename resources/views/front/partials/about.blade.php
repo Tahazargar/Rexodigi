@@ -11,7 +11,7 @@
                         <div class="col-lg-6">
                             <div class="services d-flex">
                                 <div class="services-img w-25 p-1">
-                                    <img src="{{ asset('front/images/about/building.png') }}" class="w-100" alt="">
+                                    <img src="{{ asset('front/images/about/iphone.svg') }}" class="w-100" alt="">
                                 </div>
                                 <div class="services-text w-75 px-3 py-2">
                                     <h3 class="fs-5 mb-4">{{ $about->service_title_item_one }}</h3>
@@ -22,7 +22,7 @@
                         <div class="col-lg-6">
                             <div class="services d-flex">
                                 <div class="services-img w-25 p-1">
-                                    <img src="{{ asset('front/images/about/floor-plan.png') }}" class="w-100" alt="">
+                                    <img src="{{ asset('front/images/about/laptop.svg') }}" class="w-100" alt="">
                                 </div>
                                 <div class="services-text w-75 px-3 py-2">
                                     <h3 class="fs-5 mb-4">{{ $about->service_title_item_two }}</h3>
@@ -33,7 +33,7 @@
                         <div class="col-lg-6">
                             <div class="services d-flex">
                                 <div class="services-img w-25 p-1">
-                                    <img src="{{ asset('front/images/about/consult.png') }}" class="w-100" alt="">
+                                    <img src="{{ asset('front/images/about/accessories.svg') }}" class="w-100" alt="">
                                 </div>
                                 <div class="services-text w-75 px-3 py-2">
                                     <h3 class="fs-5 mb-4">{{ $about->service_title_item_three }}</h3>
@@ -44,7 +44,7 @@
                         <div class="col-lg-6">
                             <div class="services d-flex">
                                 <div class="services-img w-25 p-1">
-                                    <img src="{{ asset('front/images/about/reverse-engineering.png') }}" class="w-100" alt="">
+                                    <img src="{{ asset('front/images/about/sale.svg') }}" class="w-100" alt="">
                                 </div>
                                 <div class="services-text w-75 px-3 py-2">
                                     <h3 class="fs-5 mb-4">{{ $about->service_title_item_four }}</h3>
@@ -61,10 +61,10 @@
                     <img class="tz-about-img" src="{{ 'back/images/about/' . $about->image }}" alt="{{ $about->alt }}">
                     <div class="counter-wrap d-flex py-3 px-3 align-items-center">
                         <div class="icon">
-                            <img src="{{ asset('front/images/about/engineer.png') }}" alt="">
+                            <img src="{{ asset('front/images/about/experience.svg') }}" alt="">
                         </div>
                         <div class="text d-flex flex-column px-3">
-                            <span class="number text-primary fw-bold fs-3">{{ $about->experience_number }}</span>
+                            <span class="number text-white fw-bold fs-3">{{ $about->experience_number }}</span>
                             <span class="caption fw-bold fs-5 text-white">
                                 {{ $about->experience_text }}
                             </span>

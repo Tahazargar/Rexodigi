@@ -33,21 +33,21 @@
                 <tr>
                     <td>{{ $item->id }}</td>
                     <td><img src="{{ asset('back/images/about/' . $item->image)}}" width="50px"></td>
-                    <td>{{ $item->pre_title }}</td>
-                    <td>{{ $item->title }}</td>
-                    <td>{{ \Illuminate\Support\Str::limit($item->description, '50') }}</td>
-                    <td>{{ $item->service_title }}</td>
-                    <td>{{ $item->service_title_item_one }}</td>
-                    <td>{{ $item->service_description_item_one }}</td>
-                    <td>{{ $item->service_title_item_two }}</td>
-                    <td>{{ $item->service_description_item_two }}</td>
-                    <td>{{ $item->service_title_item_three }}</td>
-                    <td>{{ $item->service_description_item_three }}</td>
-                    <td>{{ $item->service_title_item_four }}</td>
-                    <td>{{ $item->service_description_item_four }}</td>
-                    <td>{{ $item->experience_number }}</td>
-                    <td>{{ $item->experience_text }}</td>
-                    <td>{{ $item->alt }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->pre_title, '20') }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->title, '20') }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->description, '20') }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->service_title, '20') }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->service_title_item_one, '20') }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->service_description_item_one, '20') }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->service_title_item_two, '20') }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->service_description_item_two, '20') }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->service_title_item_three, '20') }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->service_description_item_three, '20') }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->service_title_item_four, '20') }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->service_description_item_four, '20') }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->experience_number, '20') }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->experience_text, '20') }}</td>
+                    <td>{{ \Illuminate\Support\Str::limit($item->alt, '20') }}</td>
                     <td>
                         <a href="{{ route('about.edit', ['id' => $item->id]) }}" class="text-success text-decoration-none">ویرایش</a>
                     </td>

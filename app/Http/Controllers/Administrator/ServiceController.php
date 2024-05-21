@@ -55,10 +55,6 @@ class ServiceController extends Controller
             'box_three_description' => $request->box_three_description,
             'box_three_button_text' => $request->box_three_button_text,
             'box_three_button_link' => $request->box_three_button_link,
-            'box_four_title' => $request->box_four_title,
-            'box_four_description' => $request->box_four_description,
-            'box_four_button_text' => $request->box_four_button_text,
-            'box_four_button_link' => $request->box_four_button_link,
         ]);
 
         $request->session()->flash('create');
@@ -118,6 +114,10 @@ class ServiceController extends Controller
             'box_two_description' => $request->box_two_description,
             'box_two_button_text' => $request->box_two_button_text,
             'box_two_button_link' => $request->box_two_button_link,
+            'box_three_title' => $request->box_three_title,
+            'box_three_description' => $request->box_three_description,
+            'box_three_button_text' => $request->box_three_button_text,
+            'box_three_button_link' => $request->box_three_button_link,
         ]);
 
         $request->session()->flash('update');

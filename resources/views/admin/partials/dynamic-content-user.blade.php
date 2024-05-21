@@ -34,6 +34,11 @@
                     @endforeach
                 </tbody>
             </table>
+
+            <a href="{{ route('users.create') }}">
+                <button class="btn btn-primary w-25">ساخت کاربر</button>
+            </a>
+
             {{ $users->links() }}
         </div>
     </div>

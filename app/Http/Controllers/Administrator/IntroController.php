@@ -89,7 +89,7 @@ class IntroController extends Controller
         }
         else
         {
-            $image = $request->image;
+            $image = $intro->image;
         }
 
         $intro->update([

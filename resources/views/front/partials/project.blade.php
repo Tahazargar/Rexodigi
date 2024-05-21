@@ -5,90 +5,22 @@
     </div>
 
     <div class="row">
-      <div class="col-lg-4 col-md-6">
-        <div class="project-item">
-          <img src=" {{ asset('front/images/project/project1.png') }} " class="w-100" alt="">
-          <div class="project-search">
-            <a href="">
-              <i class="fas fa-search"></i>
-            </a>
-          </div>
-          <div class="project-description">
-            <h2 class="text-white fs-5">پروژه اول</h2>
-            <h3 class="fs-4 text-white">این پروژه اول است</h3>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="project-item">
-          <img src="{{ asset('front/images/project/project2.png') }}" class="w-100" alt="">
-          <div class="project-search">
-            <a href="">
-              <i class="fas fa-search"></i>
-            </a>
-          </div>
-          <div class="project-description">
-            <h2 class="text-white fs-5">پروژه اول</h2>
-            <h3 class="fs-4 text-white">این پروژه اول است</h3>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="project-item">
-          <img src="{{ asset('front/images/project/project3.png') }}" class="w-100" alt="">
-          <div class="project-search">
-            <a href="">
-              <i class="fas fa-search"></i>
-            </a>
-          </div>
-          <div class="project-description">
-            <h2 class="text-white fs-5">پروژه اول</h2>
-            <h3 class="fs-4 text-white">این پروژه اول است</h3>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="project-item">
-          <img src="{{ asset('front/images/project/project4.png') }}" class="w-100" alt="">
-          <div class="project-search">
-            <a href="">
-              <i class="fas fa-search"></i>
-            </a>
-          </div>
-          <div class="project-description">
-            <h2 class="text-white fs-5">پروژه اول</h2>
-            <h3 class="fs-4 text-white">این پروژه اول است</h3>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="project-item">
-          <img src="{{ asset('front/images/project/project5.png') }}" class="w-100" alt="">
-          <div class="project-search">
-            <a href="">
-              <i class="fas fa-search"></i>
-            </a>
-          </div>
-          <div class="project-description">
-            <h2 class="text-white fs-5">پروژه اول</h2>
-            <h3 class="fs-4 text-white">این پروژه اول است</h3>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="project-item">
-          <img src="{{ asset('front/images/project/project6.png') }}" class="w-100" alt="">
-          <div class="project-search">
-            <a href="">
-              <i class="fas fa-search"></i>
-            </a>
-          </div>
-          <div class="project-description">
-            <h2 class="text-white fs-5">پروژه اول</h2>
-            <h3 class="fs-4 text-white">این پروژه اول است</h3>
-          </div>
-        </div>
-      </div>
+        @foreach($projects as $project)
+            <div class="col-lg-4 col-md-6">
+                <div class="project-item">
+                    <img src=" {{ asset('back/images/project/' . $project->image) }} " class="w-100" alt="">
+                    <div class="project-search">
+                        <a href="">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                    <div class="project-description">
+                        <h2 class="text-white fs-5">پروژه اول</h2>
+                        <h3 class="fs-4 text-white">این پروژه اول است</h3>
+                    </div>
+                </div>
+            </div>
+        @endforeach
     </div>
 
   </section>

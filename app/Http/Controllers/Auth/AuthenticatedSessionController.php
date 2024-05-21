@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\Footer;
+use App\Models\FooterAnyQuestion;
+use App\Models\FooterQuick;
+use App\Models\FooterService;
+use App\Models\Header;
 use App\Models\TopHeader;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
@@ -19,7 +24,12 @@ class AuthenticatedSessionController extends Controller
     public function create(): View
     {
         $topHeader = TopHeader::orderBy('id', 'desc')->take(1)->first();
-        return view('auth.login', compact('topHeader'));
+        $header = Header::paginate(5);
+        $footer = Footer::all()->last();
+        $footerServices = FooterService::orderBy('id', 'desc')->paginate(3);
+        $footerQuick = FooterQuick::all()->last();
+        $footerAnyQuestion = FooterAnyQuestion::all()->last();
+        return view('auth.login', compact('topHeader', 'header', 'footer', 'footerServices', 'footerQuick', 'footerAnyQuestion'));
     }
 
     /**

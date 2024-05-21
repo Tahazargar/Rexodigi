@@ -16,48 +16,26 @@
                 aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner pb-5">
-              <div class="slider-item bg-white p-4 carousel-item active">
-                <div class="slider-item-info d-flex align-items-center">
-                  <img src="{{ asset('front/images/testimonial/1.webp') }}" class="img-fluid rounded-circle px-3" alt="">
-                  <div class="information">
-                    <h3 class="fs-5 fw-bold">جان جاناتانی</h3>
-                    <h4 class="fs-6 text-primary mt-2">مدیر شرکت رایانه گستر</h4>
-                  </div>
-                </div>
-                <div class="slider-item-descritpion">
-                  <p class="text-muted mt-5  fs-6">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                    استفاده از طراحان گرافیک استلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                    از طراحان گرافیک است</p>
-                </div>
-              </div>
-              <div class="slider-item bg-white p-4 carousel-item">
-                <div class="slider-item-info d-flex align-items-center">
-                  <img src="{{ asset('front/images/testimonial/2.webp') }}" class="img-fluid rounded-circle px-3" alt="">
-                  <div class="information">
-                    <h3 class="fs-5 fw-bold">جان جاناتانی</h3>
-                    <h4 class="fs-6 text-primary mt-2">مدیر شرکت رایانه گستر</h4>
-                  </div>
-                </div>
-                <div class="slider-item-descritpion">
-                  <p class="text-muted mt-5  fs-6">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                    استفاده از طراحان گرافیک استلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                    از طراحان گرافیک است</p>
-                </div>
-              </div>
-              <div class="slider-item bg-white p-4 carousel-item">
-                <div class="slider-item-info d-flex align-items-center">
-                  <img src="{{ asset('front/images/testimonial/1.webp') }}" class="img-fluid rounded-circle px-3" alt="">
-                  <div class="information">
-                    <h3 class="fs-5 fw-bold">جان جاناتانی</h3>
-                    <h4 class="fs-6 text-primary mt-2">مدیر شرکت رایانه گستر</h4>
-                  </div>
-                </div>
-                <div class="slider-item-descritpion">
-                  <p class="text-muted mt-5  fs-6">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                    استفاده از طراحان گرافیک استلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                    از طراحان گرافیک است</p>
-                </div>
-              </div>
+                @php
+                    $counter = 0;
+                @endphp
+                @foreach($testimonials as $testimonial)
+                    @php
+                        $counter++;
+                    @endphp
+                    <div class="slider-item bg-white p-4 carousel-item {{ $counter == 1 ? 'active' : '' }}">
+                        <div class="slider-item-info d-flex align-items-center">
+                            <img src="{{ asset('back/images/testimonial/' . $testimonial->image) }}" class="img-fluid rounded-circle px-3" alt="">
+                            <div class="information">
+                                <h3 class="fs-5 fw-bold">{{ $testimonial->customer_name }}</h3>
+                                <h4 class="fs-6 text-primary mt-2">{{ $testimonial->customer_position }}</h4>
+                            </div>
+                        </div>
+                        <div class="slider-item-descritpion">
+                            <p class="text-muted mt-5  fs-6">{{ $testimonial->description }}</p>
+                        </div>
+                    </div>
+                @endforeach
             </div>
 
           </div>

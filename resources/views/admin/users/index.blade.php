@@ -5,7 +5,7 @@
 @include('admin.partials.sidebar')
 @include('admin.partials.header')
 @include('admin.partials.information')
-@include('admin.users.dynamic-content')
+@include('admin.partials.dynamic-content-user')
 
 @endsection('content')
 
@@ -27,25 +27,6 @@ function destroyFunction(event, id) {
     console.log('js is working');
     event.preventDefault();
     document.getElementById('delete-user-' + id).sumbit();
-    // Swal.fire({
-    //     title: 'مطمئنی؟',
-    //     text: "این عمل قابل بازگشت نیست!",
-    //     icon: 'warning',
-    //     showCancelButton: true,
-    //     confirmButtonColor: '#3085d6',
-    //     cancelButtonColor: '#d33',
-    //     confirmButtonText: 'بله، حذفش کن',
-    //     cancelButtonText: 'انصراف'
-    // }).then((result => {
-    //     if (result.isConfirmed) {
-
-    //         Swal.fire(
-    //             'حذف',
-    //             'کاربر حذف شد',
-    //             'حذف موفقیت آمیز بود'
-    //         )
-    //     }
-    // }))
 }
 </script>
 
